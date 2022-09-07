@@ -115,8 +115,8 @@ promedio_alturas_masc = acumulador_alturas/contador_personajes_fem
 print("El promedio de alturas del genero F es: {0}".format(promedio_alturas_masc)) """
 
 #punto J
-""" #lista unica (con set) de colores posibles
-lista_color_ojos = []
+#lista unica (con set) de colores posibles
+""" lista_color_ojos = []
 for personaje in lista_personajes:
     lista_color_ojos.append(personaje['color_ojos'])
     set_color_ojos = set(lista_color_ojos)
