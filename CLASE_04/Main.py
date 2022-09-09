@@ -130,7 +130,10 @@ for color in set_color_ojos:
         if(color == personaje['color_ojos']):
             contador_color += 1   
     dict_color_contador = {'Color' : color, 'Total' : contador_color}
-    lista_completa_ojos.append(dict_color_contador) """
+    lista_completa_ojos.append(dict_color_contador)
+
+for item in lista_completa_ojos:
+    print(item) """
 
 #punto K
 #lista unica (con set) de colores posibles
@@ -166,6 +169,8 @@ for int in set_color_int:
             contador_int += 1   
     if(int == ""):
         int = "No Tiene"
+    else:
+        int = int
     dict_inteligencia_contador = {'Inteligencia' : int, 'Total' : contador_int}
     lista_completa_inteligencia.append(dict_inteligencia_contador)
 
@@ -227,8 +232,11 @@ for int in set_color_int:
             lista_heroes_int.append(personaje['nombre'])  
     if(int == ""):
         int = "No Tiene"
+    else:
+        int = int
     dict_inteligencia_contador = {'Inteligencia' : int, 'Heroes' : lista_heroes_int}
     lista_completa_inteligencia.append(dict_inteligencia_contador)
 
 for item in lista_completa_inteligencia:
     print(item)
+
