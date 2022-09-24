@@ -1,3 +1,4 @@
+from tkinter import Menu
 from data_stark import lista_personajes
 
 #punto 0
@@ -222,6 +223,56 @@ def sumar_dato_heroe(lista:list, clave:str):
         
         return sumatoria
 
-def 
+def dividir(dividendo:float, divisor:float):
+    '''
+    me falta la doc
+    '''
+    if(divisor == 0):
+        return 0
+    else:
+        division = dividendo / divisor
+        
+        return division
+
+def calcular_promedio(lista:list,clave:str):
+    '''
+    me falta la doc
+    '''
+    if(type(lista) != list or type(clave) != str):
+        print("Error en los datos recibidos")
+    else:
+        totales = sumar_dato_heroe(lista, clave)
+        contador_heroes = 0
+        for heroe in lista:
+            if(heroe[clave] != ""):
+                contador_heroes += 1
+        promedio = dividir(totales, contador_heroes)
+
+        return promedio
+
+def stark_calcular_imprimir_promedio_altura(lista:list):
+    '''
+    falta la doc
+    '''
+    if(type(lista) != list):
+        return -1
+    else:
+        promedio_alturas = calcular_promedio(lista, 'altura')
+
+        print("El promedio de alturas es {0}".format(promedio_alturas))
+
+#----------------------Ejercicio 6-----------------
+
+def imprimir_menu():
+    '''
+    falta doc
+    '''
+    menu_stark = input("\nSeleccione una opcion del menu:\n'1 - Imprimir nombres Heroes '\n'2 - Imprimir nombre y dato especifico'\n'3 - Imprimir alturas y sus nombres'\n'4 - Calcular Maximo o Minimo entre los heroes'\n'5 - Imprimir el promedio de alturas'\n'6 - Salir'\n\n>")
+
+    imprimir_dato(menu_stark)
+
+
+
+    
 
  
