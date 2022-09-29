@@ -108,3 +108,34 @@ def filtro_promedio(lista:list, clave:str, tipo_filtro:str):
 
 
 """ print(filtro_promedio(traer_data_json("C:/Users/usuario/Desktop/PROGRAMACION UTN/1 Cuatri/ProgramacionYLaboratorio1/CLASE_10/data_stark.json"), 'peso', 'menor')) """
+
+#funcion para buscar heroes por inteligencia
+def buscar_inteligencia(lista:list,busqueda:str):
+    '''
+    recibe una lista de diccionarios y termino para la busqueda dentro de la clave inteligencia de esos diccionarios
+
+    retorna una lista de heroes que cumplan con esa busqueda
+    '''
+    if(busqueda != "high" and busqueda != "average" and busqueda != 'good'):
+        retorno = ["No  hay elementos compatibles con esa busqueda"]
+    else:
+        nueva_lista = lista.copy()
+        lista_final = []
+        for elemento in nueva_lista:
+            if(elemento['inteligencia'] == busqueda):
+                lista_final.append(elemento)
+        retorno = lista_final
+    
+    return retorno
+
+
+#funcion para exportar CSV
+def exportar_csv(lista:list, path:str):
+    '''
+    recibe una lista de diccionarios y un path donde guardar el CSV
+
+    devuelve un CSV donde cada linea es un diccionario en el que cada clave esta separada por comas
+    '''
+    with open(path,"w") as file:
+        for elemento in lista:
+            file.write("{0},{1},{2},{3},{4},{5}\n".format(elemento['nombre'],elemento['identidad'], elemento['altura'], elemento['peso'], elemento['fuerza'], elemento['inteligencia']))
